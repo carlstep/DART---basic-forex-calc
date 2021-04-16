@@ -4,7 +4,7 @@ import "dart:io";
 double amount(String promptAmount) {
     print(promptAmount);
     double quantity = double.parse(stdin.readLineSync());
-    return quantity;String
+    return quantity;
 }
 
 String prompt(String promptText) {
@@ -23,7 +23,7 @@ void main() {
     String secondCurrency = prompt("What currency do you want to exchange to? ");
     print("You want to exchange ${howMuch} ${firstCurrency} into ${secondCurrency}.");
 
-    double rate = amount("What is the excahnge rate?");
+    double rate = amount("What is the exchange rate?");
 
     double convert = howMuch * rate;
     print("${howMuch} ${firstCurrency} will give you ${convert} ${secondCurrency}");
