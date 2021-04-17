@@ -23,8 +23,22 @@ void main() {
     String secondCurrency = prompt("What currency do you want to exchange to? ");
     print("You want to exchange ${howMuch} ${firstCurrency} into ${secondCurrency}.");
 
-    double rate = amount("What is the exchange rate?");
+    double rate = 0; //amount("What is the exchange rate?");
+
+    if(firstCurrency == "USD" && secondCurrency == "GBP") {
+        rate = 0.72;
+    } else if(firstCurrency == "USD" && secondCurrency == "EUR") {
+        rate = 0.83;
+    } else if(firstCurrency == "GBP" && secondCurrency == "USD") {
+        rate = 1.38;
+    } else if(firstCurrency == "GBP" && secondCurrency == "EUR") {
+        rate = 1.15;
+    } else if(firstCurrency == "EUR" && secondCurrency == "USD") {
+        rate = 1.19;
+    } else if(firstCurrency == "EUR" && secondCurrency == "GBP") {
+        rate = 0.86;
+        }
 
     double convert = howMuch * rate;
-    print("${howMuch} ${firstCurrency} will give you ${convert} ${secondCurrency}");
+    print("${howMuch} ${firstCurrency} will give you ${convert} ${secondCurrency}, based on ${rate}");
 }
